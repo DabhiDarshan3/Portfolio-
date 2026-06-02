@@ -16,16 +16,12 @@ import './index.css';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-  const [darkMode, setDarkMode] = useState(true);
-
   const handleLoadComplete = useCallback(() => {
     setLoading(false);
   }, []);
 
-  const toggleDark = useCallback(() => setDarkMode(d => !d), []);
-
   return (
-    <div className={darkMode ? 'dark' : ''} style={{ background: '#0F172A' }}>
+    <div className="dark" style={{ background: '#0F172A' }}>
       {/* Custom Cursor */}
       <CustomCursor />
 
@@ -51,7 +47,7 @@ export default function App() {
             <ParticleBackground />
 
             {/* Navigation */}
-            <Navbar darkMode={darkMode} toggleDark={toggleDark} />
+            <Navbar />
 
             {/* Main Content */}
             <main>
